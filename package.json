@@ -1,0 +1,16 @@
+{
+  "name": "restaurantpicker",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "dev": "ntl dev",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "marisamorby",
+  "license": "ISC",
+  "dependencies": {
+    "@notionhq/client": "^2.2.0",
+    "netlify-cli": "^11.5.1"
+  }
+}

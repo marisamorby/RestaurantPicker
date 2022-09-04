@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="/styles/styles.css">
+</head>
+<body>
+    <section class="container">
+        <h1>Where should we eat tonight?</h1>
+
+    <section class="grid">  
+        <div class="card">
+            <h3>Tried and True</h3>
+            <p id="tried"></p>
+        </div>
+
+        <div class="card">
+            <h3>Something New</h3>
+            <p id="not-tried"></p>
+        </div>
+    </section>  
+    
+        <button id="load-restaurants">Food me!</button>
+    </section>
+    <script>
+        async function showRestaurants(){
+            const response=await fetch("/.netlify/functions/get-restaurants")
+            const data=await response.json()
+    
+            const triedContainer=document.querySelector("#tried")
+            triedContainer.textContent=data.tried
+
+            const notTriedContainer=document.querySelector("#not-tried")
+            notTriedContainer.textContent=data.nottried
+        }
+    
+        const button=document.querySelector("#load-restaurants")
+        button.addEventListener("click", ()=> {
+            showRestaurants()
+        })
+    
+    </script>
+
+
+</body>
+</html>
